@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PublishStatusManager>
+    <FormPage OnLoadEvent="scForm.postRequest('', '', '', 'StartTimer()' )">
+      <Stylesheet Src="Ribbon.css" DeviceDependant="true"/>
+
+      <Script Src="/sitecore/shell/Controls/SitecoreObjects.js"/>
+      <Script Src="/sitecore/shell/Applications/Content Manager/Content Editor.js"/>
+
+      <CodeBeside Type="Sitecore.SharedSource.Shell.Applications.Publishing.PublishStatusManager,Sitecore.SharedSource.AdvancedPublishDialog" />
+      <GridPanel Height="100%" Width="100%">
+        <Border ID="RibbonContainer" Width="100%">
+        </Border>
+        <Border ID="GridContainer" GridPanel.Height="100%" Height="100%" Background="White">
+          <GridPanel class="scBackground" vAlign="top" Height="100%" Width="100%" Style="table-layout:fixed" Cellspacing="10" Cellpadding="0" Background="#e9e9e9">
+            <Border Height="100%" GridPanel.Height="100%" Background="#e9e9e9">
+              <Scrollbox ID="JobPanel" Width="100%" Height="100%" Background="white" Border="1px solid silver" Padding="0">
+                <Listview ID="JobList" View="Details" Width="100%" DblClick="DblClick_CancelJob">
+                  <ListviewHeader>
+                    <ListviewHeaderItem Name="jobName" Header="Name" />
+                    <ListviewHeaderItem Name="jobCategory" Header="Category" />
+                    <ListviewHeaderItem Name="jobState" Header="State" />
+                    <ListviewHeaderItem Name="jobProcessed" Header="Processed Items" />
+                    <ListviewHeaderItem Name="jobStarted" Header="Start Time" />
+                    <ListviewHeaderItem Name="jobOwner" Header="Owner" />
+                  </ListviewHeader>
+                </Listview>
+              </Scrollbox>
+            </Border>
+          </GridPanel>
+        </Border>
+      </GridPanel>
+    </FormPage>
+  </PublishStatusManager>
+</control>
+                           
